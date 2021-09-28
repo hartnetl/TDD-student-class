@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 
 class Student:
-    """ A Student class as a basee for method testing """
+    """ A Student class as a base for method testing """
     def __init__(self, first_name, last_name):
         # the underscore tells other developers the bariable is read only
         self._first_name  = first_name
@@ -17,6 +17,10 @@ class Student:
     # this gets the full name of the student
     def full_name(self):
         return f"{self._first_name} {self._last_name}"
+
+    @property
+    def email(self):
+        return f'{self._first_name.lower()}.{self._last_name.lower()}@email.com'
 
     def alert_santa(self):
         self.naughty_list = True

@@ -9,6 +9,10 @@ class TestStudent(unittest.TestCase):
         student = Student("John", "Doe")
         self.assertEqual(student.full_name, "John Doe")
 
+    def test_email(self):
+        student = Student("John", "Doe")
+        self.assertEqual(student.email, "john.doe@email.com")
+
     # Create test for changing naughty list to True
     def test_alert_santa(self):
         # Create instance
@@ -17,6 +21,7 @@ class TestStudent(unittest.TestCase):
         student.alert_santa()
         # Check it changed
         self.assertTrue(student.naughty_list)
+
 
 
 if __name__ == "__main__":
