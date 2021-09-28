@@ -8,8 +8,8 @@ https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PT101+2021_T1/co
 * student class
 * Testing methods and properties
 * Building a method using TDD
-** Create the first test
-** Create the code
+  * Create the first test
+  * Create the code
 * The lifecycle of a test
 * Code along challenge
 * Mocking introduction
