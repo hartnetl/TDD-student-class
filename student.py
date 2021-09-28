@@ -17,3 +17,6 @@ class Student:
     # this gets the full name of the student
     def full_name(self):
         return f"{self._first_name} {self._last_name}"
+
+    def alert_santa(self):
+        self.naughty_list = True
