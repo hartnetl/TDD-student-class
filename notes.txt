@@ -94,3 +94,19 @@ These are defined using camel case
 The TearDown method:
     Removes temporary files etc
     It is not needed in this project, but is included to see when it is run behind the scenes
+
+
+#############################
+LESSON 6 - the extension challenge
+#############################
+
+INSTRUCTOR STEPS
+    * Create new test method called test_apply_extension
+    * Inside this, store the current end_date for our student instance in a variable called old_end_date
+    * Call a method named apply_extension that will take a number of days as an arguement on thr student instance to update the end_date
+    * Assert whether the instance's end_date equals the old end date plus the days arguement that was passed in using time delta
+    * Run the tests to confirm that the new method is failing
+    * In the student class, create a new method called apply_extension that has a parameter called days
+    * USe the timedelta method from datetime to update the end_date property
+    * Run the tests to confirm they are working
+
