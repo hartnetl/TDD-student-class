@@ -1,6 +1,7 @@
 import unittest
 from student import Student
 from datetime import timedelta
+from unittest.mock import patch
 
 
 class TestStudent(unittest.TestCase):
@@ -38,7 +39,7 @@ class TestStudent(unittest.TestCase):
         self.student.alert_santa()
         # Check it changed
         self.assertTrue(self.student.naughty_list)
-        
+
     # Create test for extension
     def test_apply_extension(self):
         print("testing apply_extension")
@@ -47,6 +48,29 @@ class TestStudent(unittest.TestCase):
         self.student.apply_extension(5)
 
         self.assertEqual(self.student.end_date, old_end_date + timedelta(days=5))
+
+    # Create successful call request
+    def test_course_schedule_success(self):
+        with patch("student.requests.get") as mocked_get:
+            # Set the values in student.py as if the test was successful
+            mocked_get.return_value.ok = True
+            mocked_get.return_value.text = "Success"
+
+            schedule = self.student.course_schedule()
+            self.assertEqual(schedule, "Success")
+            
+
+     # Create failed call request
+    def test_course_schedule_failed(self):
+        """
+        In the path "student" comes from the name of the file student.py
+        """
+        with patch("student.requests.get") as mocked_get:
+            mocked_get.return_value.ok = False
+
+            schedule = self.student.course_schedule()
+            self.assertEqual(schedule, "Something went wrong")
+
 
 if __name__ == "__main__":
     unittest.main()

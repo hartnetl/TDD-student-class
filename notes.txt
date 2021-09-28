@@ -110,3 +110,9 @@ INSTRUCTOR STEPS
     * USe the timedelta method from datetime to update the end_date property
     * Run the tests to confirm they are working
 
+
+#############################
+LESSON 7 - Mocking
+#############################
+
+Mocking focuses on the code being tested, without relying on external factors such as APIs by mimicking an API call
