@@ -3,25 +3,31 @@ from student import Student
 
 
 class TestStudent(unittest.TestCase):
+
+    def setUp(self):
+        print('setUp')
+        self.student = Student('John', 'Doe')
+
+    def tearDown(self):
+        print('tearDown')
+
     # Test the full name function
     def test_full_name(self):
-        # We need to create an instance to test it
-        student = Student("John", "Doe")
-        self.assertEqual(student.full_name, "John Doe")
+        print('test_full_name')
+        # This tests each instance as it comes
+        self.assertEqual(self.student.full_name, "John Doe")
 
     def test_email(self):
-        student = Student("John", "Doe")
-        self.assertEqual(student.email, "john.doe@email.com")
+        print('test_email')
+        self.assertEqual(self.student.email, "john.doe@email.com")
 
     # Create test for changing naughty list to True
     def test_alert_santa(self):
-        # Create instance
-        student = Student("John",  "Doe")
+        print('test_alert_santa')
         # Call the function
-        student.alert_santa()
+        self.student.alert_santa()
         # Check it changed
-        self.assertTrue(student.naughty_list)
-
+        self.assertTrue(self.student.naughty_list)
 
 
 if __name__ == "__main__":

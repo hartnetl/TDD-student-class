@@ -1,4 +1,6 @@
+#############################
 Lesson 1: 
+#############################
 
 Set up student.py file as follows
 
@@ -19,7 +21,9 @@ Set up student.py file as follows
                     return f"{self._first_name} {self._last_name}"
 
 
+#############################
 LESSON 2:
+#############################
 
 First thing to do is set up test_student.py as so:
     
@@ -35,3 +39,58 @@ First thing to do is set up test_student.py as so:
 
             if __name__ == "__main__":
                 unittest.main()
+
+This tests if full name is being returned
+
+#############################
+LESSON 3
+#############################
+
+Add test for alert santa
+
+            def test_alert_santa(self):
+                # Create instance
+                student = Student("John",  "Doe")
+                # Call the function
+                student.alert_santa()
+                # Check it changed
+                self.assertTrue(student.naughty_list)
+
+
+#############################
+LESSON 4
+#############################
+
+Add code for alert santa
+
+            
+            def alert_santa(self):
+                self.naughty_list = True
+
+Add test and code for returning student email
+
+            def test_email(self):
+                student = Student("John", "Doe")
+                self.assertEqual(student.email, "john.doe@email.com")
+
+
+            @property
+            def email(self):
+                return f'{self._first_name.lower()}.{self._last_name.lower()}@email.com'
+
+
+#############################
+LESSON 5 - refactor with DRY
+#############################
+
+NOTES
+here we're going to use UnitTest methods - setUp and TearDown
+These are defined using camel case
+
+* add setUp to test each student
+* add print statements to each test so you see when they happen
+
+
+The TearDown method:
+    Removes temporary files etc
+    It is not needed in this project, but is included to see when it is run behind the scenes
