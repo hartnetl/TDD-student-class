@@ -2,8 +2,7 @@
 
 PYTHON TESTING -> REAL WORLD TESTS  
 
-Lessons found here:  
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PT101+2021_T1/courseware/f20cd699fac3480b99004d1fc3f265ef/21da01f55f1b46169946c19a5117073d/?child=first  
+Lessons found [here](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PT101+2021_T1/courseware/f20cd699fac3480b99004d1fc3f265ef/21da01f55f1b46169946c19a5117073d/?child=first)
 
 * student class
 * Testing methods and properties
