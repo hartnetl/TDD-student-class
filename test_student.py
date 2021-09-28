@@ -4,6 +4,15 @@ from student import Student
 
 class TestStudent(unittest.TestCase):
 
+    @classmethod
+    # This acts on the class instead of the instance of a class
+    def setUpClass(cls):
+        print("Set up class")
+
+    @classmethod
+    def tearDownClass(cls):
+        print("Tear dowm class")
+
     def setUp(self):
         print('setUp')
         self.student = Student('John', 'Doe')
